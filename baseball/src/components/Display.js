@@ -7,7 +7,7 @@ const Display = (props) => {
         <h4>Balls: {props.ball}</h4>
       </div>
       <div>
-        <h4>Stikes: {props.strike}</h4>
+        <h4>Strikes: {props.strike}</h4>
       </div>
       <div>
         <h4>Hits: {props.hit}</h4>
