@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Display = () => {
+const Display = (props) => {
   return (
     <div>
-      
+      <div>
+        <h4>Balls: {props.ball}</h4>
+      </div>
+      <div>
+        <h4>Stikes: {props.strike}</h4>
+      </div>
     </div>
   );
 };

@@ -56,7 +56,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashboard />
+        <Dashboard 
+          ball={this.state.ball} 
+          strike={this.state.strike} 
+          recordBall={this.recordBall} 
+          recordStrike={this.recordStrike}
+          recordFoul={this.recordFoul}
+          recordHit={this.recordHit} />
       </div>
     );
   }

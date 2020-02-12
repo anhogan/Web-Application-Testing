@@ -1,10 +1,18 @@
 import React from 'react';
 import Display from './Display';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div>
-      <Display />
+      <Display 
+        ball={props.ball} 
+        strike={props.strike} />
+      <div>
+        <button onClick={props.recordBall}>Ball</button>
+        <button onClick={props.recordStrike}>Strike</button>
+        <button onClick={props.recordFoul}>Foul</button>
+        <button onClick={props.recordHit}>Hit</button>
+      </div>
     </div>
   );
 };
