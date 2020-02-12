@@ -9,6 +9,9 @@ const Display = (props) => {
       <div>
         <h4>Stikes: {props.strike}</h4>
       </div>
+      <div>
+        <h4>Hits: {props.hit}</h4>
+      </div>
     </div>
   );
 };

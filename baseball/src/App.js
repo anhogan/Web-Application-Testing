@@ -1,71 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      strike: 0,
-      ball: 0,
-      hit: 0
-    };
-  };
+function App() {
+  const [strike, setStrike] = useState(0);
+  const [ball, setBall] = useState(0);
+  const [hit, setHit] = useState(0);
 
-  recordStrike() {
-    if(this.state.strike < 3) {
-      this.setState({
-        strike: strike + 1
-      });
+  const recordStrike = () => {
+    if(strike < 2) {
+      setStrike(strike + 1);
     } else {
-      this.setState({
-        strike: 0
-      });
+      setStrike(0);
     };
   };
 
-  recordBall() {
-    if(this.state.ball < 4) {
-      this.setState({
-        ball: ball + 1
-      });
+  const recordBall = () => {
+    if(ball < 3) {
+      setBall(ball + 1);
     } else {
-      this.setState({
-        ball: 0
-      });
+      setBall(0);
     };
   };
 
-  recordFoul() {
-    if(this.state.strike < 3) {
-      this.setState({
-        strike: strike + 1
-      });
+  const recordFoul = () => {
+    if(strike < 2) {
+      setStrike(strike + 1);
     };
   };
 
-  recordHit() {
-    this.setState({
-      strike: 0,
-      ball: 0,
-      hit: hit + 1
-    });
+  const recordHit = () => {
+    setStrike(0);
+    setBall(0);
+    setHit(hit + 1);
   };
 
-  render() {
-    return (
-      <div className="App">
-        <Dashboard 
-          ball={this.state.ball} 
-          strike={this.state.strike} 
-          recordBall={this.recordBall} 
-          recordStrike={this.recordStrike}
-          recordFoul={this.recordFoul}
-          recordHit={this.recordHit} />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Dashboard 
+        ball={ball} 
+        strike={strike}
+        hit={hit} 
+        recordBall={recordBall} 
+        recordStrike={recordStrike}
+        recordFoul={recordFoul}
+        recordHit={recordHit} />
+    </div>
+  );
 }
 
 export default App;
